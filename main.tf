@@ -8,9 +8,9 @@
   
   # S3 backend configuration
   backend "s3" {
-    bucket = "BUCKETNAME_TO_BE_REPLACED"
+    bucket = "terraform-backend-566589565655689"
     key    = "api-lambda/terraform.tfstate"
-    region = "eu-west-1"
+    region = "us-east-1"
     encrypt = true
   }
 }
