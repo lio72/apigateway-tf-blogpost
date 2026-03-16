@@ -167,6 +167,12 @@ resource "aws_api_gateway_stage" "crud_stage" {
   stage_name    = "prod"
 }
 
+resource "aws_api_gateway_stage" "crud_stage_ppd" {
+  deployment_id = aws_api_gateway_deployment.crud_deployment.id
+  rest_api_id   = aws_api_gateway_rest_api.crud_api.id
+  stage_name    = "preprod"
+}
+
 # Output the API Gateway URL
 output "api_url" {
   value = "${aws_api_gateway_stage.crud_stage.invoke_url}/items"
